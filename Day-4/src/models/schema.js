@@ -6,7 +6,7 @@ export const posts = pgTable("posts", {
     title: text("title").notNull(),
     content: text("content").notNull().default(""),
     authorId: integer("authorId").notNull().references(() => users.id),
-    createdAt: timestamp("createdAt").defaultNow(),
+    createdAt: timestamp("createdAt").notNull().defaultNow(),
 })
 
 export const users = pgTable("users", {

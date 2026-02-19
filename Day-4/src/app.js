@@ -1,4 +1,4 @@
-import { setDefaultResultOrder } from "dns"
+
 import "dotenv/config.js";
 import express from 'express';
 import postsRoute from "./routes/posts.route.js"
@@ -6,9 +6,9 @@ import authRoutes from "./routes/auth.route.js"
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); // Middleware to parse JSON bodies
 
-setDefaultResultOrder("ipv4first")
+
 
 app.get("/", (req, res) => {
     res.send("Blog Post API - Welcome!");

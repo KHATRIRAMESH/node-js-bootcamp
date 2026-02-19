@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 
 export const authMiddleware = (req, res, next) => {
 
+    console.log("Auth middleware called", req);
 
     const authHeader = req.headers.authorization;
 

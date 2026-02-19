@@ -1,8 +1,10 @@
-import express from 'express';
+import { setGlobalDispatcher, Agent } from "undici";
 import "dotenv/config.js";
+import express from 'express';
 import postsRoute from "./routes/posts.route.js"
 import authRoutes from "./routes/auth.route.js"
 
+setGlobalDispatcher(new Agent({ connect: { family: 4 } }));
 
 const app = express();
 
