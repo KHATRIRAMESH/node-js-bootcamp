@@ -6,6 +6,7 @@ import { posts } from '../models/schema.js';
 
 const router = express.Router();
 
+//getting psot
 router.get("/", async (req, res) => {
     try {
         console.log("Fetching posts from the database...");
@@ -36,4 +37,6 @@ router.post("/", async (req, res) => {
         res.status(500).send("Error creating post");
     }
 })
+
+
 export default router;
